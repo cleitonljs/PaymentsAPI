@@ -15,7 +15,7 @@ namespace Infrastructure.Messagin.Consumer
         {
             var message = context.Message;
 
-            var email = $"Compra Recebida\nGameId:{message.GameId}\nUserId:{message.UserId}\nPrice:{message.Price}";
+            var email = $"Pedido de compra recebido\nAprovando o pagamento ...";
 
             Console.WriteLine(email);
 
@@ -27,6 +27,8 @@ namespace Infrastructure.Messagin.Consumer
             };
 
             await paymentProcessedProducer.PaymentProcessed(paymentEvent);
+
+            Console.WriteLine("\nPagamento aprovado\n");
         }
     }
 }
