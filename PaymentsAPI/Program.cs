@@ -32,7 +32,7 @@ builder.Services.AddMassTransit(x =>
             });
 
         cfg.ReceiveEndpoint(
-                builder.Configuration["RabbitMQ:Queues:FCG_Catalog"],
+                builder.Configuration["RabbitMQ:Queues:FCG_Payment"],
                 e =>
                 {
                     e.ConfigureConsumer<OrderPlacedConsumer>(
@@ -54,7 +54,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
-Console.WriteLine($"FCG_Catalog: {builder.Configuration["RabbitMQ:Queues:FCG_Catalog"]}");
 
 app.Run();

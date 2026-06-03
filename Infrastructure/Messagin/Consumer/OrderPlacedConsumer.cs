@@ -13,11 +13,7 @@ namespace Infrastructure.Messagin.Consumer
     {
         public async Task Consume(ConsumeContext<OrderPlacedEvent> context)
         {
-            var message = context.Message;
-
-            var email = $"Pedido de compra recebido\nAprovando o pagamento ...";
-
-            Console.WriteLine(email);
+            var message = context.Message;            
 
             var paymentEvent = new PaymentProcessedEvent
             {
@@ -27,8 +23,6 @@ namespace Infrastructure.Messagin.Consumer
             };
 
             await paymentProcessedProducer.PaymentProcessed(paymentEvent);
-
-            Console.WriteLine("\nPagamento aprovado\n");
         }
     }
 }
