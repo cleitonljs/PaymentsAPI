@@ -3,13 +3,13 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 WORKDIR /app
 
-COPY ["PaymentAPI-master/PaymentsAPI/PaymentsAPI.csproj", "PaymentsAPI/"]
+COPY ["PaymentsAPI/PaymentsAPI.csproj", "PaymentsAPI/"]
 
 RUN dotnet restore "PaymentsAPI/PaymentsAPI.csproj"
 
 COPY . .
 
-RUN dotnet publish "PaymentAPI-master/PaymentsAPI/PaymentsAPI.csproj" -c Release -o /app/publish
+RUN dotnet publish "PaymentsAPI/PaymentsAPI.csproj" -c Release -o /app/publish
 
 # Stage 2
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
