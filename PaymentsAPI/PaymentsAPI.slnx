@@ -1,6 +1,0 @@
-<Solution>
-  <Project Path="../Application/Application.csproj" Id="a5418483-90e6-4366-a03b-b7206e792b7d" />
-  <Project Path="../Domain/Domain.csproj" Id="6d733337-44d2-4f57-a84a-b71d742da569" />
-  <Project Path="../Infrastructure/Infrastructure.csproj" Id="efb63658-0b7d-43fc-b333-f4498f996684" />
-  <Project Path="PaymentsAPI.csproj" />
-</Solution>
